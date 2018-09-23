@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { createStore } from "redux";
-import user from "./images/user.png";
+import kamal from "./images/kamal.jpg";
 import reducers from "./reducers/index";
 import "./App.css";
 
 const initialState = {
-  name: "Alex Bakery",
-  description: "Software Engineer, Speaker, and Occasional Model",
-  likes: "Cats, Wine, and Black dresses",
-  location: "localhost"
+  name: "Kamal Yadav",
+  description: "Software Engineer, Entrepreneur, Traveller",
+  likes: "Pizza, Butter Chicken, and Gol Gappe",
+  location: "In your Heart"
 };
 const store = createStore(reducers, initialState);
 
@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <section className="User__img">
-          <img src={user} alt="user" />
+          <img src={kamal} alt="user" />
         </section>
 
         <section className="User__info">
