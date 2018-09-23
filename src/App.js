@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+import { createStore } from "redux";
 import user from "./images/user.png";
+import reducers from "./reducers/index";
 import "./App.css";
 
+const initialState = {
+  name: "Alex Bakery",
+  description: "Software Engineer, Speaker, and Occasional Model",
+  likes: "Cats, Wine, and Black dresses",
+  location: "localhost"
+};
+const store = createStore(reducers, initialState);
+
 class App extends Component {
-  state = {
-    name: "Alex Bakery",
-    description: "Software Engineer, Speaker, and Occasional Model",
-    likes: "Cats, Wine, and Black dresses",
-    location: "localhost"
-  };
   render() {
-    const { name, description, likes, location } = this.state;
     return (
       <div className="App">
         <section className="User__img">
@@ -20,20 +23,20 @@ class App extends Component {
         <section className="User__info">
           <p>
             {" "}
-            <span className="faint">I am</span> a {description}
+            <span className="faint">I am</span> a {store.getState().description}
           </p>
           <p>
             {" "}
-            <span className="faint">I like</span> {likes}
+            <span className="faint">I like</span> {store.getState().likes}
           </p>
 
           <p className="User__info__details User__info__divider faint">
             <span>Name: </span>
-            <span>{name}</span>
+            <span>{store.getState().name}</span>
           </p>
           <p className="User__info__details faint">
             <span>Location: </span>
-            <span>{location}</span>
+            <span>{store.getState().location}</span>
           </p>
         </section>
       </div>
