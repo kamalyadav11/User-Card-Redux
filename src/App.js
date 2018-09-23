@@ -3,13 +3,6 @@ import { connect } from "react-redux";
 import kamal from "./images/kamal.jpg";
 import "./App.css";
 
-// const initialState = {
-//   name: "Kamal Yadav",
-//   description: "Software Engineer, Entrepreneur, Traveller",
-//   likes: "Pizza, Butter Chicken, and Gol Gappe",
-//   location: "In your Heart"
-// };
-
 class App extends Component {
   render() {
     return (
